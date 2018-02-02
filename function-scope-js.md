@@ -1,61 +1,66 @@
-## Funciones  y Statements globales
-
+## Funciones globales
 - Estas funciónes son definidas en el ámbito global
+$(document).ready(function() 
+
+
+## Funciones  Locales
+
+- Estas funciónes son definidas en el ámbito local(dentro de otra función)
 
 ```
 function activeButton() {
-    $buttonNext.attr('disabled', false);
-  } 
+        ...
+} 
 ```
 ```
 function desactiveButton() {  
-    $buttonNext.attr('disabled', true);
+        ...
   } 
 ```
 ```
 function longitud(input) {
-    if (input.trim().length === 16) {
-      return input;
+        ...
     }
   }
 ```
 ```
 function isValidCreditCard(numberCard) {
-    var creditCardNumber = soloNumeros(longitud(numberCard));
-    if (creditCardNumber !== undefined) {
-      var arr = [];
-      var sumaTotal = 0;
-      for (var index = creditCardNumber.length - 1; index >= 0; index--) {
-        arr.push(creditCardNumber[index]);
-      }
-      for (var index = 1; index < arr.length; index = index + 2) {
-        arr[index] = arr[index] * 2;
-        if (arr[index] >= 10) {
-          arr[index] = arr[index] - 9;
-        }    
-      }
-     
-      for (var index = 0; index < arr.length; index++) {
-        sumaTotal = sumaTotal + parseInt(arr[index]);
-      }
-     
-      if (sumaTotal % 10 === 0) {
-        console.log('Es una tarjeta valida');
-        activeButton();
-      } else {
-        console.log('No es un numero valido');
-        desactiveButton();
-      }
-    } else {
-      console.log('Verifique el numero de su tarjeta'); 
-      desactiveButton();  
-    }
+        ...
   }
  
 ```
+## Funciones Statement
 
-
+```
+function soloNumeros(input) {
+        ....
+  }
+ ```
+ ```
+function activeButton() {
+        ...
+} 
+```
+```
+function desactiveButton() {  
+        ...
+  } 
+```
+```
+function longitud(input) {
+     ....
+    }
+  }
+```
+```
+function isValidCreditCard(numberCard) {
+    ...
+  }
+ 
+```
 ## Funciones de callback
+- llama a una funcion y le envía por parámetro otra función (un callback)
+
 ```
 // Funcion que valida que sea una un numero de tarjeta valido   
   function isValidCreditCard(numberCard) {
@@ -106,16 +111,37 @@ $(document).ready(function() {})
   }
   }
   ```
-## Local Scope
-
-
+## Funciones de stack execution (pila de llamadas)
 ```
-<script src="./makeVowelsUpperCase.js"></script>
-$(document).ready(function() {})
-
+$(document).ready(function() {
 ```
+
 ## Funciones que forman parte de la cola de Eventos (event queue)
-
+```
 $inputCard.on('input', function() {
     isValidCreditCard($(this).val().trim());
   });
+```
+
+```
+function activeButton() {
+        ...
+} 
+```
+```
+function desactiveButton() {  
+        ...
+  } 
+```
+```
+function longitud(input) {
+        ...
+    }
+  }
+```
+```
+function isValidCreditCard(numberCard) {
+        ...
+  }
+ 
+```
