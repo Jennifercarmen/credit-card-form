@@ -1,8 +1,8 @@
 ## Funciones globales
 - Estas funciónes son definidas en el ámbito global
+```
 $(document).ready(function() 
-
-
+```
 ## Funciones  Locales
 
 - Estas funciónes son definidas en el ámbito local(dentro de otra función)
@@ -71,16 +71,6 @@ function isValidCreditCard(numberCard) {
 $(document).ready(function() {})
 ```
 
-## Variables Globales
-
-```
- // Declaramos las variables que vamos a utilizar
-  var $inputCard = $('#card-number');
-  var $inputMonth = $('.input-month');
-  var $inputYear = $('.input-year');
-  var $buttonNext = $('#next');
-    
-```
 ## Funciones clousures y Local Scope
 - Los closures son funciones que manejan variables independientes. E
 ```
